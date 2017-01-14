@@ -3,10 +3,9 @@ import LoginController from './views/Login/Login.controller';
 import AccountDetailsController from './views/AccountDetails/AccountDetails.controller';
 
 import Backbone from 'backbone';
+import $ from 'jquery';
 
 export default function () {
-	const $        = require( 'jquery' );
-	
 	const app = {
 		router    : new Backbone.Router,
 		container : $( '#app-container' ), //get the node we're using as a container
