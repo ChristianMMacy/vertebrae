@@ -1,5 +1,7 @@
 //Uninitialized Controllers
-import HomeController from './views/Home.controller.js';
+import HomeController from './views/Home/Home.controller';
+import LoginController from './views/Login/Login.controller';
+import AccountDetailsController from './views/AccountDetails/AccountDetails.controller';
 
 (function () {
 	document.onreadystatechange = function () {
@@ -33,7 +35,18 @@ import HomeController from './views/Home.controller.js';
 				app.controllers = {
 					homeController: new HomeController(
 						{
-							models: {user: app.user},
+							router: app.router,
+							container: app.container
+						}
+					),
+					loginController: new LoginController(
+						{
+							router: app.router,
+							container: app.container
+						}
+					),
+					accountDetailsController: new AccountDetailsController(
+						{
 							router: app.router,
 							container: app.container
 						}
